@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int[] nums = new int[10];
+        int totalOver69 = 0;
+        int sumOver69 = 0;
+
+        System.out.println("請輸入10個整數：");
+        for (int i = 0; i < 10; i++) {
+            System.out.print("第" + (i + 1) + "個整數：");
+            nums[i] = scanner.nextInt();
+        }
+
+        for (int num : nums) {
+            if (num > 69) {
+                totalOver69++;
+                sumOver69 += num;
+            }
+        }
+
+        double averageOver69 = totalOver69 > 0 ? (double) sumOver69 / totalOver69 : 0;
+
+        System.out.println("陣列中大於69的有" + totalOver69 + "個總合為" + sumOver69);
+        System.out.println("平均值為" + averageOver69);
+    }
+}
