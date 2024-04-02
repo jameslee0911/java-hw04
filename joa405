@@ -1,0 +1,28 @@
+public class Main {
+    public static void main(String[] args) {
+        String[] originalArray = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J"};
+        String[] reversedArray = reverseArray(originalArray);
+
+        System.out.print("反轉陣列資料之前：");
+        for (String item : originalArray) {
+            System.out.print(item);
+        }
+        System.out.println();
+        
+        System.out.print("反轉陣列資料之後：");
+        for (String item : reversedArray) {
+            System.out.print(item);
+        }
+    }
+
+    public static String[] reverseArray(String[] array) {
+        int length = array.length;
+        String[] reversedArray = new String[length];
+
+        for (int i = 0; i < length; i++) {
+            reversedArray[i] = array[length - 1 - i];
+        }
+
+        return reversedArray;
+    }
+}
